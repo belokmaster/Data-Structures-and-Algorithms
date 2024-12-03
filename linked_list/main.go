@@ -34,4 +34,8 @@ func main() {
 	fmt.Println("Удаляем дубликатные значения в списке:")
 	ll.RemoveDuplicate()
 	ll.Display()
+
+	fmt.Println("Отсортируем с помощью сортировки пузырьком: ")
+	ll.BubbleSort()
+	ll.Display()
 }
