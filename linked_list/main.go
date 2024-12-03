@@ -25,9 +25,13 @@ func main() {
 	fmt.Printf("Средний элемент: %d\n", middleNode.value)
 	ll.Display()
 
-	fmt.Println("Добавляем элемент 40 в список. Попробуем удалить его.")
+	fmt.Println("Добавляем элемент 40 в список. Попробуем удалить его: ")
 	ll.Add(6, 40)
 	ll.Display()
 	ll.RemoveElement(40)
+	ll.Display()
+
+	fmt.Println("Удаляем дубликатные значения в списке:")
+	ll.RemoveDuplicate()
 	ll.Display()
 }
