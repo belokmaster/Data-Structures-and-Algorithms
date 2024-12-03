@@ -76,7 +76,7 @@ func (ll *LinkedList) Add(index int, value int) {
 	}
 
 	if current == nil { // если индекс вне диапазона
-		fmt.Println("Индекс вне диапазона")
+		fmt.Println("Индекс вне диапазона.")
 		return
 	}
 
@@ -87,7 +87,7 @@ func (ll *LinkedList) Add(index int, value int) {
 // remove удаляет элемент из список по указанному индексу
 func (ll *LinkedList) Remove(index int) {
 	if ll.head == nil { // если список пуст
-		fmt.Println("Список пуст")
+		fmt.Println("Список пуст.")
 		return
 	}
 
@@ -102,7 +102,7 @@ func (ll *LinkedList) Remove(index int) {
 	}
 
 	if current == nil || current.next == nil { // если индекс вне диапазона
-		fmt.Println("Индекс вне диапазона")
+		fmt.Println("Индекс вне диапазона.")
 		return
 	}
 
@@ -132,7 +132,7 @@ func (ll *LinkedList) Display() {
 		fmt.Printf("%d -> ", current.value)
 		current = current.next
 	}
-	fmt.Println("nil\n") // конец списка
+	fmt.Println("nil") // конец списка
 }
 
 // generateRandomList создает связанный список с случайным количеством элементов и случайными значениями

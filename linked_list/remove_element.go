@@ -5,7 +5,7 @@ import "fmt"
 func (ll *LinkedList) RemoveElement(value int) {
 	// Если список пуст, выводится сообщение об ошибке и выполнение функции завершается.
 	if ll.head == nil {
-		fmt.Print("Список пуст, элемент не может быть удален.\n")
+		fmt.Println("Список пуст, элемент не может быть удален.")
 		return
 	}
 
@@ -23,6 +23,6 @@ func (ll *LinkedList) RemoveElement(value int) {
 	if current.next != nil {
 		current.next = current.next.next
 	} else {
-		fmt.Println("Элемент не найден.\n")
+		fmt.Println("Элемент не найден.")
 	}
 }
