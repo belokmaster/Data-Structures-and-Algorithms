@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 // Node представляет собой узел связанного списка
 type Node struct {
@@ -129,4 +133,23 @@ func (ll *LinkedList) Display() {
 		current = current.next
 	}
 	fmt.Println("nil") // конец списка
+}
+
+// generateRandomList создает связанный список с случайным количеством элементов и случайными значениями
+func GenerateRandomList(maxElements, maxValue int) *LinkedList {
+	ll := &LinkedList{}
+
+	// Инициализируем новый генератор случайных чисел
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	// Определяем случайное количество элементов
+	numElements := r.Intn(maxElements) + 1
+
+	// Заполняем список случайными значениями
+	for i := 0; i < numElements; i++ {
+		value := r.Intn(maxValue)
+		ll.PushBack(value)
+	}
+
+	return ll
 }
