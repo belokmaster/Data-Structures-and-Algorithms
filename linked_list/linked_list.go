@@ -132,7 +132,7 @@ func (ll *LinkedList) Display() {
 		fmt.Printf("%d -> ", current.value)
 		current = current.next
 	}
-	fmt.Println("nil") // конец списка
+	fmt.Println("nil\n") // конец списка
 }
 
 // generateRandomList создает связанный список с случайным количеством элементов и случайными значениями
