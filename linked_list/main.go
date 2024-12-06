@@ -38,4 +38,17 @@ func main() {
 	fmt.Println("Отсортируем с помощью сортировки пузырьком: ")
 	ll.BubbleSort()
 	ll.Display()
+
+	ll = GenerateRandomList(10, 20)
+	fmt.Println("Список выглядит так: ")
+	ll.Display()
+
+	fmt.Println("Отсортируем с помощью сортировки вставками: ")
+	ll.InsertionSort()
+	ll.Display()
+
+	ll = GenerateRandomList(10, 20)
+	fmt.Println("Отсортируем с помощью сортировки слиянием: ")
+	ll.MergeSort()
+	ll.Display()
 }
