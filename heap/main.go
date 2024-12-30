@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	heap := &Heap{}
+	heap := &MinHeap{}
 	heap.Insert(1)
 	heap.Insert(100)
 	heap.Insert(50)
