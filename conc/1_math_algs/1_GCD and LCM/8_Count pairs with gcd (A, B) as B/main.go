@@ -14,7 +14,7 @@ package main
 избегая лишних операций. Это сокращает сложность с O(n) до O(sqrt(n)).
 */
 
-// Time complexity: O(n). This is because the while loop takes O(n) time to complete since it is looping over all elements of the array.
+// Time complexity: O(n). Это связано с тем, что выполнение цикла for занимает O(n) времени, поскольку он выполняет цикл по всем элементам массива.
 // Auxiliary space: O(1), as no extra space is used.
 func countPairs(n int) int {
 	k := n
