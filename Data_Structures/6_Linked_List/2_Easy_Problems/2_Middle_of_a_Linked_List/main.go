@@ -1,10 +1,11 @@
 package main
 
 import (
-	linkedList "algs/Data_Structures/6_Linked_List/LINKED_LIST"
+	linkedList "algs/Data_Structures/6_Linked_List/1_Basics_of_Linked_List/1_Singly_Linked_List"
 	"fmt"
 )
 
+// алгоритм флойда, он же черепаха и заяц
 func FindMiddle(head *linkedList.Node) *linkedList.Node {
 	if head == nil {
 		return nil
