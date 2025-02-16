@@ -1,19 +1,21 @@
 package main
 
-import "strconv"
+import "fmt"
 
-// Задано число n, задача состоит в том, чтобы вернуть количество цифр в этом числе.
+// Дано число n (n >= 0), найдите его факториал .
 
-func cointDigit(n int) int {
-	count := 0
-	for n > 0 {
-		n /= 10
-		count++
+func factorial(n int) int {
+	res := 1
+
+	for i := 2; i <= n; i++ {
+		res *= i
 	}
-	return count
+
+	return res
 }
 
-func fromIntToString(n int) int {
-	result := strconv.Itoa(n)
-	return len(result)
+func main() {
+	var n int
+	fmt.Scan(&n)
+	fmt.Println(factorial(n))
 }

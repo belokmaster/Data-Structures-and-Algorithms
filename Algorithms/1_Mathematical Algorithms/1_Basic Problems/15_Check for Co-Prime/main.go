@@ -1,19 +1,27 @@
 package main
 
-import "strconv"
+import "fmt"
 
-// Задано число n, задача состоит в том, чтобы вернуть количество цифр в этом числе.
+// Два числа A и B называются простейшими или взаимно простыми, если их наибольший общий делитель равен 1.
+// Вам даны два числа A и B, найдите, являются ли они простейшими или нет.
 
-func cointDigit(n int) int {
-	count := 0
-	for n > 0 {
-		n /= 10
-		count++
+func gcd(a, b int) int {
+	if b == 0 {
+		return a
 	}
-	return count
+	return gcd(b, a%b)
 }
 
-func fromIntToString(n int) int {
-	result := strconv.Itoa(n)
-	return len(result)
+func coPrime(a, b int) bool {
+	if gcd(a, b) == 1 {
+		return true
+	}
+
+	return false
+}
+
+func main() {
+	var a, b int
+	fmt.Scan(&a, &b)
+	fmt.Println(coPrime(a, b))
 }
