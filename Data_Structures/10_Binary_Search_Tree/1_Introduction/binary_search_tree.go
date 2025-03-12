@@ -184,6 +184,36 @@ func MaxValueBST(root *TreeNode) int {
 	return current.Val
 }
 
+// Функция для вставки значения в бинарное дерево
+func InsertBT(root *TreeNode, val int) *TreeNode {
+	if root == nil {
+		return &TreeNode{Val: val}
+	}
+
+	if val < root.Val {
+		root.Left = InsertBT(root.Left, val)
+	} else {
+		root.Right = InsertBT(root.Right, val)
+	}
+
+	return root
+}
+
+// Функция для создания случайного бинарного дерева из n элементов
+func GenerateRandomBT(n int) *TreeNode {
+	if n == 0 {
+		return nil
+	}
+
+	rand.Seed(time.Now().UnixNano())
+	root := &TreeNode{Val: rand.Intn(100)}
+	for i := 1; i < n; i++ {
+		InsertBT(root, rand.Intn(100))
+	}
+
+	return root
+}
+
 // Функция для генерации случайного бинарного дерева
 func GenerateRandomTree(nodeCount int) *TreeNode {
 	rand.Seed(time.Now().UnixNano()) // Инициализация генератора случайных чисел
