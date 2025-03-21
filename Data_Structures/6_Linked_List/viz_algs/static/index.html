@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визуализация связанного списка</title>
+    <script defer src="script.js"></script>
+    <style>
+        .node {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .highlight {
+            background: yellow;
+            transform: scale(1.2);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        #list {
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        #controls {
+            width: 200px;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            gap: 10px; /* Добавляем расстояние между элементами */
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        #addBtn {
+            background: #4CAF50;
+            color: white;
+        }
+        #addFrontBtn {
+            background: #4CAF50;
+            color: white;
+        }
+        #addIndexBtn {
+            background: #4CAF50;
+            color: white;
+        }
+        #clearBtn {
+            background: #f44336;
+            color: white;
+        }
+        input {
+            font-size: 16px;
+            padding: 8px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="list"></div>
+    
+    <div id="controls">
+        <input type="number" id="value" placeholder="Введите число">
+        <button id="addBtn" onclick="addNode()">Добавить в конец</button>
+        <button id="addFrontBtn" onclick="addNodeFront()">Добавить в начало</button>
+        <input type="number" id="index" placeholder="Введите индекс">
+        <button id="addIndexBtn" onclick="addNodeByIndex()">Добавить по индексу</button>
+        <button id="clearBtn" onclick="clearList()">Очистить</button>
+    </div>
+</body>
+</html>
