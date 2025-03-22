@@ -5,23 +5,35 @@ import (
 	"fmt"
 )
 
-// Учитывая заголовок односвязного списка, задача состоит в том, чтобы найти, является ли данный
-// связанный список циклическим или нет. Связанный список называется циклическим,
-// если его последний узел указывает обратно на его первый узел.
-func printList(head *linkedList.Node) bool {
+// удалить последнее вхождение в списке
+func deleteLastOccurrence(head *linkedList.Node, target int) *linkedList.Node {
 	if head == nil {
-		return true
+		return nil
 	}
 
+	var prev *linkedList.Node
+	var last *linkedList.Node
+	var lastPrev *linkedList.Node
 	current := head
+
 	for current != nil {
+		if current.Val == target {
+			lastPrev = prev
+			last = current
+		}
+		prev = current
 		current = current.Next
-		if current == head {
-			return true
+	}
+
+	if last != nil {
+		if lastPrev != nil {
+			lastPrev.Next = last.Next
+		} else {
+			head = head.Next
 		}
 	}
 
-	return false
+	return head
 }
 
 func main() {
@@ -31,9 +43,13 @@ func main() {
 	head = linkedList.InsertAtEnd(head, 3)
 	head = linkedList.InsertAtEnd(head, 4)
 	head = linkedList.InsertAtEnd(head, 5)
+	head = linkedList.InsertAtEnd(head, 6)
 	head = linkedList.InsertAtEnd(head, 5)
 
 	// Выводим элементы списка
 	fmt.Print("Список элементов: ")
-	printList(head)
+	linkedList.TraverseLinkedList(head)
+
+	head = deleteLastOccurrence(head, 6)
+	linkedList.TraverseLinkedList(head)
 }

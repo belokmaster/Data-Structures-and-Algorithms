@@ -13,11 +13,62 @@ type Node struct {
 
 // Обход включает посещение каждого узла в связанном списке
 func TraverseLinkedList(head *Node) {
+	if head == nil {
+		fmt.Println("Список пуст.")
+		return
+	}
+
+	if IsCurcular(head) {
+		fmt.Println("Список циклический.")
+		return
+	}
+
 	current := head
 
 	for current != nil {
 		fmt.Print(current.Val, " ")
 		current = current.Next
+	}
+
+	fmt.Println()
+}
+
+func IsCurcular(head *Node) bool {
+	if head == nil {
+		return true
+	}
+
+	current := head
+	for current != nil {
+		current = current.Next
+		if current == head {
+			return true
+		}
+	}
+
+	return false
+}
+
+func TraverseCircularLinkedList(head *Node) {
+	if head == nil {
+		fmt.Println("Список пуст.")
+		return
+	}
+
+	if !(IsCurcular(head)) {
+		fmt.Println("Список не циклический.")
+		return
+	}
+
+	fmt.Print("Circular LinkedList: ")
+	current := head
+	for current != nil {
+		fmt.Print(current.Val, " ")
+		current = current.Next
+
+		if current == head {
+			break
+		}
 	}
 
 	fmt.Println()
@@ -167,4 +218,18 @@ func DeleteAllLinkedList(head *Node) *Node {
 		current = nextNode // Переходим к следующему узлу
 	}
 	return nil // Возвращаем nil, так как список пуст
+}
+
+func MakeCircularLinkedList(head *Node) *Node {
+	if head == nil {
+		return nil
+	}
+
+	current := head
+	for current.Next != nil {
+		current = current.Next
+	}
+
+	current.Next = head
+	return head
 }
