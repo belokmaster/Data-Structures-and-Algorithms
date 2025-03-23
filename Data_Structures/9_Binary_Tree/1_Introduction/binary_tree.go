@@ -19,6 +19,7 @@ func InOrderDFS(node *TreeNode) {
 	if node == nil {
 		return
 	}
+
 	InOrderDFS(node.Left)
 	fmt.Print(node.Val, " ")
 	InOrderDFS(node.Right)
@@ -39,6 +40,7 @@ func PostOrderDFS(node *TreeNode) {
 	if node == nil {
 		return
 	}
+
 	PostOrderDFS(node.Left)
 	PostOrderDFS(node.Right)
 	fmt.Print(node.Val, " ")
