@@ -38,6 +38,7 @@ func search(arr []int, key int) int {
 	// Ключ не найден
 	return -1
 }
+
 func main() {
 	arr := []int{}
 	for i := 0; i < 10; i++ {
